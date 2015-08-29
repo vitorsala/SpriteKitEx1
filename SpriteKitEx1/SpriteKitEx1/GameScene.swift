@@ -57,7 +57,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         physicsWorld.contactDelegate = self
 
-
         self.bgMusic("8-punk-8-bit-music")
 
         // Points label setup
@@ -93,8 +92,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        player.physicsBody?.categoryBitMask = NodeCategory.player
 //        player.physicsBody?.collisionBitMask = NodeCategory.none
 
-        player.xScale = 0.3
-        player.yScale = 0.3
+        player.xScale = 0.4
+        player.yScale = 0.4
         player.position = CGPoint(x: self.size.width*0.1, y: self.size.height*0.5)
         player.zRotation = CGFloat(-90)*CGFloat(M_PI)/CGFloat(180)
 
@@ -103,8 +102,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     func addMeteor(){
 
-        let meteor = SKShapeNode(circleOfRadius: 30)
-        meteor.physicsBody = SKPhysicsBody(circleOfRadius: 30)
+        let meteor = SKShapeNode(circleOfRadius: 40)
+        meteor.physicsBody = SKPhysicsBody(circleOfRadius: 40)
         meteor.physicsBody?.categoryBitMask = NodeCategory.meteor
         meteor.physicsBody?.contactTestBitMask = NodeCategory.projectile
         meteor.physicsBody?.collisionBitMask = NodeCategory.none
